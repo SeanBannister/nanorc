@@ -1,20 +1,79 @@
-## PHP syntax highlighting
+## Here is an example for PHP
+syntax "php" "\.php[2345s~]?$"
+
+
+
+## Types
+color brightred "\<(var|float|global|double|bool|char|int|enum|const)\>"
+
+## Structure
+color green "\<(class|new|private|public|protected|function)\>"
+
+## Control flow
+color brightyellow "\<(goto|continue|break|return)\>"
+
+
+
+####
+## Functions, Loops, If Else statements
+####
+
+## Anything before a (
+color brightgreen "\<[a-zA-Z_0-9]*\("
 ##
-syntax "php" "\.php$" "\.php[2345s]$" "\.phtml$"
-#functions
-color brightmagenta "([A-Za-z0-9])"
-#numbers
-color brightblue "[0-9]"
-#special
-color brightwhite "(^|[^A-Za-z0-9])(<\?php|\?>|var|and|or|default|class|extends|true|false|global|function|new|switch|case|break|next|prev|elseif|if|else|foreach|for|as|do|while|exit|die|declare|require_once|require|include_once|include|return|echo|static|array|isset)([^A-Za-z0-9])"
-#types
-color brightred "([^A-Za-z0-9])|[^A-Za-z](null|int|string|float|bool|object|resource)[^A-Za-z0-9_]+[^A-Za-z]"
-#strings
-color brightyellow ""(\\.|[^\"])*""
-color brightyellow "'(\\.|[^\'])*'"
-#Variables
-color brightcyan "\$[]\[A-Za-z0-9_'\"]*"
-#comments
-color green "//.*"
-color green "#.*"
-color green start="/\*" end="\*/"
+color brightred "\<(for|foreach|if|while|do|else|elseif|case|default|switch)\>"
+## Comparison Operators and Logical Operators
+color brightyellow "[,()]" "==" "!=" "<=" ">=" "<" ">" "&&" "\||" "!"
+color brightyellow " as " " => "
+
+
+
+####
+## Variables
+####
+
+## Anything starting with $
+color magenta "\$[a-zA-Z_0-9]*"
+## Brackets as used in arrays
+color brightmagenta "(\[)|(\])"
+## Anything starting with ->
+color magenta "\->[a-zA-Z_0-9]*"
+## =
+color brightmagenta " = "
+## ->
+color brightmagenta "->"
+## ++ and -- Operator
+color brightmagenta "\++" "\--"
+
+
+
+## Strings
+color white ""(\.|[^"])*"" "'(\.|[^'])*'"
+
+## HTML
+color cyan start="<[a-zA-Z]" end="[>|\'\"]"
+color cyan start="</[a-zA-Z]" end=">"
+
+## Brackets
+color brightred "[{}]"
+
+## PHP Tags
+color brightyellow "(<\?(php)?|\?>)"
+
+## ;
+color brightyellow ";"
+
+
+
+####
+## Comments
+####
+color brightblue "// .*"
+color brightblue start="/\* " end="\*/"
+color brightblue start="/\*\*" end="\*/"
+color blue "/\* " "/\*\*" " \*/" "\*\*/" "// "
+
+
+
+## Trailing whitespace
+color ,red "[[:space:]]+$"
