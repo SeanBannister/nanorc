@@ -10,10 +10,12 @@ color brightyellow "L?'(\'|[^'])*'"
 color magenta "\$[a-zA-Z_0-9]*"
 
 ## rsyslog facility and priority highlighting
-color brightgreen "\*\." "local0\." "local1\." "local2\." "local3\." "local4\." "local5\." "local6\." "local7\." "kern\." "user\." "mail\." "lpr\." "auth\." "daemon\." "news\." "uucp\." "\.\*" "\.emerg" "\.alert" "\.crit" "\\.err" "\.warning" "\.notice" "\.info" "\.debug" "\.nano"
+color brightgreen "\*\." "local0\." "local1\." "local2\." "local3\." "local4\." "local5\." "local6\." "local7\." "kern\." "user\." "mail\." "lpr\." "auth\." "daemon\." "news\." "uucp\." "\.\*" "\.emerg" "\.alert" "\.crit" "\.err" "\.warn" "\.notice" "\.info" "\.debug" "\.nano"
 
 ## Comments
 color brightblue "# .*"
+color brightblue "##"
+color brightblue "#$"
 
 ## Trailing whitespace
 color ,red "[[:space:]]+$"
